@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyanshu Jha | Mechanical & CNC Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background: #020617; color: #f1f5f9; font-family: 'Inter', sans-serif; }
+        .tab-content { display: none; }
+        .active { display: block; animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .code-box { background: #000; color: #38bdf8; font-family: monospace; padding: 15px; border-radius: 12px; font-size: 0.8rem; line-height: 1.5; border: 1px solid #1e293b; white-space: pre-wrap; }
+        .sim-bed { background: #0f172a; height: 120px; position: relative; border-radius: 8px; border: 1px solid #334155; overflow: hidden; }
+        .tool { width: 10px; height: 10px; background: #ef4444; border-radius: 50%; position: absolute; box-shadow: 0 0 10px #ef4444; transition: all 1s ease; top: 10px; left: 10px; }
+    </style>
+</head>
+<body>
+
+    <header class="py-20 bg-slate-900 border-b-4 border-blue-600 text-center px-6">
+        <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">Divyanshu Kumar Jha</h1>
+        <p class="text-xl md:text-2xl text-blue-500 font-bold uppercase mt-4">B.Tech Mechanical Engineer (Pursuing)</p>
+        <p class="text-slate-400 mt-2 italic">Industrial Expert with 3+ Years Experience @ Somic ZF P.Ltd.</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <button onclick="openTab('cnc')" class="bg-blue-600 px-8 py-3 rounded-xl font-bold uppercase text-xs shadow-lg">10 CNC Programs</button>
+            <button onclick="openTab('software')" class="bg-purple-600 px-8 py-3 rounded-xl font-bold uppercase text-xs shadow-lg">Software & 10 Projects</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-16 px-6">
+
+        <div id="cnc" class="tab-content active">
+            <h2 class="text-3xl font-bold mb-12 text-center text-blue-400 uppercase">VMC Programming Library (1-10)</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cnc-container">
+                </div>
+        </div>
+
+        <div id="software" class="tab-content">
+            <h2 class="text-3xl font-bold mb-12 text-center text-purple-400 uppercase">Engineering Software Suite</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-20">
+                <div class="bg-slate-900 p-6 rounded-2xl text-center border border-blue-500/30">
+                    <i class="fas fa-drafting-compass text-4xl text-blue-500 mb-4"></i>
+                    <h4 class="font-bold uppercase">AutoCAD (2D/3D)</h4>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl text-center border border-red-500/30">
+                    <i class="fas fa-cube text-4xl text-red-500 mb-4"></i>
+                    <h4 class="font-bold uppercase">SolidWorks</h4>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl text-center border border-green-500/30">
+                    <i class="fas fa-microchip text-4xl text-green-500 mb-4"></i>
+                    <h4 class="font-bold uppercase">Mastercam</h4>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-12 text-center uppercase text-green-400">10 Mechanical Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container">
+                </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-950 py-20 px-6 border-t border-slate-800">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 text-slate-400">
+            <div>
+                <h4 class="text-white font-bold uppercase mb-4 tracking-widest text-blue-500">Academic Roadmap</h4>
+                <p><strong>B.Tech Mechanical (Pursuing):</strong> DPG Institute of Technology & Management</p>
+                <p class="mt-2"><strong>Diploma Mechanical (2020-2023):</strong> Government Polytechnic, Purnea</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold uppercase mb-4 tracking-widest text-blue-500">Core Experience</h4>
+                <p><strong>3 Years Industry Exp:</strong> Somic ZF P.Ltd. Gurugram</p>
+                <p><strong>Skills:</strong> CNC Boring/Turning, Tool Change, 5S, Quality Control</p>
+                <p class="mt-4"><strong>Contact:</strong> 9625162969 | divyanshukumarjha2222@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const programs = [
+            { id: 1, title: "Facing Operation", code: "O0001 (FACING)\nG21 G17 G90 G40 G80\nT1 M06\nG54 S1200 M03\nG00 X-10 Y-10 Z50\nG01 Z-0.5 F100\nG01 X110 F400\nM30", anim: "line" },
+            { id: 2, title: "Square Pocket", code: "O0002 (SQ POCKET)\nT2 M06\nG54 S1800 M03\nG00 X20 Y20 Z50\nG01 Z-5 F150\nG01 X80\nG01 Y80\nM30", anim: "box" },
+            { id: 3, title: "Drilling with Dwell", code: "O0003 (DRILLING)\nT3 M06\nG54 S1500 M03\nG00 X40 Y40 Z50\nG81 Z-15 R2 F200 P500\nG80 M30", anim: "point" },
+            { id: 4, title: "Bolt Hole Circle", code: "O0004 (BOLT HOLE)\nG81 Z-10 R2 F200\nX70 Y50\nX50 Y70\nX30 Y50\nG80 M30", anim: "point" },
+            { id: 5, title: "Slot Milling", code: "O0005 (SLOT MILLING)\nT4 M06\nG54 S2000 M03\nG01 X80 F300\nG00 Z50 M30", anim: "line" },
+            { id: 6, title: "Circular Pocket", code: "O0006 (CIRCULAR)\nT4 M06\nG54 S2200 M03\nG03 I-10 J0 F250\nM30", anim: "point" },
+            { id: 7, title: "Chamfering", code: "O0007 (CHAMFER)\nT5 M06\nG54 S2500 M03\nG01 X100 Y100\nG01 X0 Y100 M30", anim: "box" },
+            { id: 8, title: "Tapping Cycle", code: "O0008 (TAPPING)\nT6 M06\nG84 Z-12 R2 F500\nG80 M30", anim: "point" },
+            { id: 9, title: "Tool Height Check", code: "O0009 (TOOL CHECK)\nT1 M06\nG01 Z10 F50\nG00 Z100 M30", anim: "point" },
+            { id: 10, title: "Machine Parking", code: "O0010 (PARKING)\nG00 X0 Y0\nG00 Z200\nM05 M09 M30", anim: "home" }
+        ];
+
+        const projects = [
+            "Gearbox Housing Drafting (AutoCAD)", "Engine Block Parametric Model (SolidWorks)", "VMC Cycle Optimization (Mastercam)", 
+            "Hydraulic Press FEA Analysis", "Conveyor Belt Layout Design", "Piston Thermal Simulation", 
+            "Aero-Component CAM Toolpath", "Chassis Welding Jig Design", "TQM Quality Documentation", "Local AI Manufacturing Model"
+        ];
+
+        function init() {
+            const cncGrid = document.getElementById('cnc-container');
+            programs.forEach(p => {
+                cncGrid.innerHTML += `
+                    <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                        <h3 class="font-bold text-sm mb-3 uppercase text-blue-400">${p.id}. ${p.title}</h3>
+                        <div class="sim-bed mb-4"><div class="tool" id="tool-${p.id}"></div></div>
+                        <button onclick="runAnim(${p.id}, '${p.anim}')" class="w-full bg-blue-600/20 text-blue-400 py-2 rounded font-bold text-xs border border-blue-500/40 mb-3 hover:bg-blue-600 hover:text-white transition">ANIMATE TOOLPATH</button>
+                        <div class="code-box">${p.code}</div>
+                    </div>`;
+            });
+
+            const projGrid = document.getElementById('projects-container');
+            projects.forEach((name, i) => {
+                projGrid.innerHTML += `<div class="bg-slate-900 p-6 rounded-xl border border-slate-800"><span class="text-blue-500 font-bold text-xs uppercase italic">Project ${i+1}</span><h4 class="font-bold text-white mt-1 uppercase text-sm underline decoration-slate-700">${name}</h4></div>`;
+            });
+        }
+
+        function runAnim(id, type) {
+            const t = document.getElementById(`tool-${id}`);
+            if(type === 'line') { t.style.left = '80%'; setTimeout(() => t.style.left = '10px', 1000); }
+            else if(type === 'box') { t.style.left = '80%'; setTimeout(() => t.style.top = '80%', 500); setTimeout(() => t.style.left = '10px', 1000); setTimeout(() => t.style.top = '10px', 1500); }
+            else { t.style.left = '50%'; t.style.top = '50%'; setTimeout(() => { t.style.left = '10px'; t.style.top = '10px'; }, 1000); }
+        }
+
+        function openTab(id) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
